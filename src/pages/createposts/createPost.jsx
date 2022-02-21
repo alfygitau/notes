@@ -1,8 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Form, Input } from "rsuite";
-import { Button, ButtonToolbar } from "rsuite";
 import "./createPost.css";
+import { AiOutlineLogin } from "react-icons/ai";
 
 const CreatePost = () => {
   const [author, setAuthor] = useState("");
@@ -11,7 +10,8 @@ const CreatePost = () => {
 
   console.log(author, title, description);
 
-  const handleSubmit = async (author, title, description) => {
+  const handleSubmit = async (e) => {
+      e.preventDefault();
     await axios
       .post("http://localhost:8000/posts", {
         author,
@@ -25,43 +25,59 @@ const CreatePost = () => {
 
   return (
     <div className="create-container">
-      <Form fluid onSubmit={handleSubmit}>
-        <Form.Group controlId="name">
-          <Form.ControlLabel>Author</Form.ControlLabel>
-          <Form.Control
-            name="name"
+      <form onSubmit={handleSubmit}>
+        <div className="mb-3">
+          <label htmlFor="exampleInputEmail1" className="form-label">
+            Author
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
             value={author}
-            onChange={(value) => setAuthor(value)}
+            onChange={(e) => setAuthor(e.target.value)}
           />
-          <Form.HelpText>Author is required</Form.HelpText>
-        </Form.Group>
-        <Form.Group controlId="name">
-          <Form.ControlLabel>Title</Form.ControlLabel>
-          <Form.Control
-            name="name"
+          <div id="emailHelp" className="form-text">
+            Author is required
+          </div>
+        </div>
+        <div className="mb-3">
+          <label htmlFor="exampleInputEmail1" className="form-label">
+            Title
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
             value={title}
-            onChange={(value) => setTitle(value)}
+            onChange={(e) => setTitle(e.target.value)}
           />
-          <Form.HelpText>Title is required</Form.HelpText>
-        </Form.Group>
-        <Form.Group controlId="textarea">
-          <Form.ControlLabel>Description</Form.ControlLabel>
-          <Input
-            as="textarea"
-            rows={3}
-            placeholder="description"
+          <div id="emailHelp" className="form-text">
+            Title is required
+          </div>
+        </div>
+        <div className="mb-3">
+          <label htmlFor="exampleInputEmail1" className="form-label">
+            Description
+          </label>
+          <textarea
+            type="text"
+            className="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
             value={description}
-            onChange={(value) => setDescription(value)}
+            onChange={(e) => setDescription(e.target.value)}
           />
-          ;<Form.HelpText>Description is required</Form.HelpText>
-        </Form.Group>
-        <Form.Group>
-          <ButtonToolbar>
-            <button appearance="primary" type="submit">Submit</button>
-            <Button appearance="default">Cancel</Button>
-          </ButtonToolbar>
-        </Form.Group>
-      </Form>
+          <div id="emailHelp" className="form-text">
+            description is required
+          </div>
+        </div>
+        <button type="submit" className="btn btn-outline-info">
+          submit | <AiOutlineLogin />
+        </button>
+      </form>
     </div>
   );
 };

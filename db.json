@@ -1,6 +1,5 @@
 {
-    "posts":
-[
+  "posts": [
     {
       "author": "trippier",
       "id": 1,
@@ -120,6 +119,18 @@
       "id": 20,
       "title": "to take up pains to provident",
       "description": "that we may follow what we deem to be able to love something similar, but it also loves or shuns the exercise of the obligations of the neo-truth"
+    },
+    {
+      "author": "user@example.com",
+      "title": "user@example.com",
+      "description": "vccvcv",
+      "id": 21
+    },
+    {
+      "author": "user@example.com",
+      "title": "gitau.bd@gmail.com",
+      "description": "jhdSJKHdsFHdjshFhsj",
+      "id": 22
     }
-]
+  ]
 }
