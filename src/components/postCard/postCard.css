@@ -1,0 +1,21 @@
+.card-container{
+    width: 400px;
+    height: 200px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+.title{
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(0,164,153);
+    text-transform: capitalize;
+}
+.author{
+    text-transform: capitalize;
+}
+.description{
+    color: rgb(148,151,162);
+}

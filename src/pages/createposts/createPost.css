@@ -1,0 +1,8 @@
+.create-container{
+    width: 60%;
+    height: fit-content;
+    margin: auto;
+    border: 0.5px solid rgb(246,246,246);
+    padding: 20px;
+    border-radius: 10px;
+}
