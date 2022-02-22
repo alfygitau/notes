@@ -5,6 +5,7 @@ import Button from "rsuite/Button";
 import { AiOutlineLogin } from "react-icons/ai";
 
 const Header = () => {
+
   return (
     <div className="navbar">
       <div className="logo">
