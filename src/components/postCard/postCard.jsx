@@ -1,7 +1,7 @@
 import "./postCard.css";
 import { RiDeleteBin2Line } from "react-icons/ri";
 import { GrUpdate } from "react-icons/gr";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Modal, Button, ButtonToolbar } from "rsuite";
 import { useState } from "react";
 import axios from "axios";

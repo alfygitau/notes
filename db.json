@@ -43,10 +43,10 @@
       "description": "it will happen by which one achieves all of the pain, not pain, and it is a repudiation of the right and great pleasure"
     },
     {
-      "author": "alfred",
-      "id": 19,
+      "author": "alfred, Jones",
       "title": "to obtain or reject one who pleases him",
-      "description": "this is great"
+      "description": "this is great",
+      "id": 19
     },
     {
       "author": "kim",
@@ -65,6 +65,12 @@
       "title": "Computers & Technology",
       "description": "The HP product is my favourite brand. The laptop offers users the flexibility, processing power and functionality needed to work anywhere. From the boardroom to the living room, this convenient laptop delivers when and where you need it to. The HP brand combines cutting-edge design and technological innovation in all its computer hardware, which includes mobile workstations and netbooks. Its efficient power durability makes it the best option for working at the office or from the comfort of your home.",
       "id": 26
+    },
+    {
+      "author": "Bob Edwards",
+      "title": "How To Have A Profitable Membership Site",
+      "description": "\"A Complete Guide To Creating A Profitable Recurring Income Through Membership Site\"\n\nBy bringing in more and more customers who pay a monthly fee for your content, your income stream will grow FAST.\n\nA membership site involves people paying a monthly fee to have access to private content.  This content is usually released at regular intervals, often weekly.\n\nNot only are membership sites EXTREMELY profitable, but by having a membership site, it puts you on the path of becoming an authority figure within your chosen niche.\n\nStarting a membership site is not nearly as difficult as you might think.  A lot of marketers get intimidated by the idea, thinking it is too big of an undertaking.  The truth is that there are a lot of great services and software options that make the task quite easy.  After the initial, often painless setup, all you really need to worry about is providing content and signing up new members.\n\nYou don’t even have to worry about having six or more months of content ready for your members.  Technically, you could start out with only the first week or two of content available on the site.  Just make sure you can add future content before they get done with what is currently there.  You don’t want members to get to a point where no content is available.  That’s the fastest way to start losing all your paying customers.\n\nOne thing to keep in mind is that the whole point of a membership site is that you can automate almost everything.  When people sign up for your list and set up their payment, they will automatically be directed on how to get started.  You won’t need to create their account, or handle any of that.  All you will need to focus on is getting new members, and making sure your members have content on a weekly basis.\n\nWhen I say your members get content on a weekly basis, remember you only need to be making content for your oldest members.  You already have content ready for all of your other newer members, and it will automatically be delivered to them within the normal time frame.",
+      "id": 27
     }
   ]
 }

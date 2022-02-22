@@ -14,13 +14,13 @@ const Header = () => {
       <div className="links">
         <ul>
           <li>
-            <a href="/posts" className="link">
-              POSTS
+            <a href="/" className="link">
+              HOME
             </a>
           </li>
           <li>
-            <a href="/editposts" className="link">
-              EDIT POSTS
+            <a href="/posts" className="link">
+              POSTS
             </a>
           </li>
           <li>
