@@ -1,0 +1,12 @@
+.detail-page{
+    width: 50%;
+    height: 400px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.title{
+    padding-top: 10px;
+}
+.author{
+    padding-bottom: 10px;
+}

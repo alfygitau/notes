@@ -65,6 +65,12 @@
       "title": "Success story",
       "description": "Another favourite brand of mine is the Android tablet. More intuitive and easier to use than most desktop or laptop computers, Android tablet uses touch-screen technology to make navigating the various applications very simple",
       "id": 25
+    },
+    {
+      "author": "Morgan Wopara",
+      "title": "Computers & Technology",
+      "description": "The HP product is my favourite brand. The laptop offers users the flexibility, processing power and functionality needed to work anywhere. From the boardroom to the living room, this convenient laptop delivers when and where you need it to. The HP brand combines cutting-edge design and technological innovation in all its computer hardware, which includes mobile workstations and netbooks. Its efficient power durability makes it the best option for working at the office or from the comfort of your home.",
+      "id": 26
     }
   ]
 }
