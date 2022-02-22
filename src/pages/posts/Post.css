@@ -6,5 +6,6 @@
     justify-content: space-around;
     flex-wrap: wrap;
     margin-top: 20px;
-    margin: auto;
+    margin-right: auto;
+    margin-left: auto;
 }

@@ -2,15 +2,18 @@ import axios from "axios";
 import React, { useState } from "react";
 import "./createPost.css";
 import { AiOutlineLogin } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 const CreatePost = () => {
+    const navigate = useNavigate();
+
   const [author, setAuthor] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-
-  console.log(author, title, description);
+  
 
   const handleSubmit = async (e) => {
+      
       e.preventDefault();
     await axios
       .post("http://localhost:8000/posts", {
@@ -20,6 +23,7 @@ const CreatePost = () => {
       })
       .then((response) => {
         console.log(response.data);
+        navigate("/posts")
       });
   };
 

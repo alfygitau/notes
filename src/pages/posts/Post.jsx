@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import PostCard from "../../components/postCard/postCard";
-import './Post.css'
+import "./Post.css";
 
 const Post = () => {
   const [posts, setPosts] = useState([]);
@@ -16,6 +16,14 @@ const Post = () => {
     fetchProducts();
   }, []);
 
+  const handleDelete = async (id) => {
+    await axios.delete(`http://localhost:8000/posts/${id}`).then((response) => {
+      const postsx = posts.filter((item) => item.id !== id);
+      setPosts(postsx);
+      console.log(postsx)
+    });
+  };
+
   return (
     <div className="posts-container">
       {posts.map((post) => (
@@ -24,6 +32,8 @@ const Post = () => {
           key={post.id}
           author={post.author}
           description={post.description}
+          id={post.id}
+          handleDelete={handleDelete}
         />
       ))}
     </div>
