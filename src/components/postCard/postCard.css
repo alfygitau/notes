@@ -26,3 +26,6 @@
     display: flex;
     gap: 2em;
 }
+.card-container a:hover{
+    text-decoration: none;
+}
