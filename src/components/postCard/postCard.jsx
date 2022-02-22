@@ -19,13 +19,15 @@ const PostCard = ({ id, author, title, description, handleDelete }) => {
   };
   const handleClose = () => setOpen(false);
 
-  const handleUpdate = async (e, id) => {
+  const handleUpdate = async (e) => {
     e.preventDefault();
+    console.log("about to update");
+    console.log(id);
     await axios
       .put(`http://localhost:8000/posts/${id}`, {
-        editAuthor: author,
-        editTitle: title,
-        editDescription: description,
+        author: editAuthor,
+        title: editTitle,
+        description: editDescription,
       })
       .then((response) => {
         console.log(response.data);
@@ -63,7 +65,7 @@ const PostCard = ({ id, author, title, description, handleDelete }) => {
               <Modal.Title>Edit the post</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <form>
+              <form onSubmit={handleUpdate}>
                 <div className="mb-3">
                   <label htmlFor="exampleInputEmail1" className="form-label">
                     Author
@@ -112,11 +114,7 @@ const PostCard = ({ id, author, title, description, handleDelete }) => {
                     description is required
                   </div>
                 </div>
-                <button
-                  type="submit"
-                  className="btn btn-outline-primary"
-                  onClick={() => handleUpdate(id)}
-                >
+                <button type="submit" className="btn btn-outline-primary">
                   Save Changes
                 </button>
               </form>

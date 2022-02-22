@@ -1,22 +1,16 @@
 {
   "posts": [
     {
-      "author": "jacob",
-      "id": 9,
-      "title": "know the right time and the pain of all the accusers",
-      "description": "this is the funniest json i have ever seen"
-    },
-    {
-      "author": "jose",
-      "id": 12,
+      "author": "jose, K.",
       "title": "at some time hate is pain",
-      "description": "so that's either great for the present because it hates them and it is pleasure and the wise because they love nothing, blinded because that pleasure is the distinction between hatred"
+      "description": "so that's either great for the present because it hates them and it is pleasure and the wise because they love nothing, blinded because that pleasure is the distinction between hatred",
+      "id": 12
     },
     {
-      "author": "james",
-      "id": 13,
+      "author": "james, M",
       "title": "pain as a tenderness and often pleasure in the mind",
-      "description": "or may we be called the softness of the pleasure of the advantage with which the pain has been corrupted by rejecting the pleasure of the world"
+      "description": "or may we be called the softness of the pleasure of the advantage with which the pain has been corrupted by rejecting the pleasure of the world",
+      "id": 13
     },
     {
       "author": "peter",
