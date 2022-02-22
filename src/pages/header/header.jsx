@@ -5,7 +5,6 @@ import Button from "rsuite/Button";
 import { AiOutlineLogin } from "react-icons/ai";
 
 const Header = () => {
-
   return (
     <div className="navbar">
       <div className="logo">
@@ -30,9 +29,11 @@ const Header = () => {
             </a>
           </li>
           <li>
-            <Button appearance="ghost">
-              Login | <AiOutlineLogin />
-            </Button>
+            <a href="/login">
+              <Button appearance="ghost">
+                Login | <AiOutlineLogin />
+              </Button>
+            </a>
           </li>
         </ul>
       </div>
