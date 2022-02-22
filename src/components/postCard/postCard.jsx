@@ -2,18 +2,35 @@ import "./postCard.css";
 import { RiDeleteBin2Line } from "react-icons/ri";
 import { GrUpdate } from "react-icons/gr";
 import { Link } from "react-router-dom";
-import { Modal, Button, ButtonToolbar, Paragrah } from "rsuite";
+import { Modal, Button, ButtonToolbar } from "rsuite";
 import { useState } from "react";
+import axios from "axios";
 
 const PostCard = ({ id, author, title, description, handleDelete }) => {
+  const [editAuthor, setEditAuthor] = useState(author);
+  const [editTitle, setEditTitle] = useState(title);
+  const [editDescription, setEditDescription] = useState(description);
 
-    const [open, setOpen] = useState(false);
-    const [size, setSize] = useState();
-    const handleOpen = value => {
-      setSize(value);
-      setOpen(true);
-    };
-    const handleClose = () => setOpen(false);
+  const [open, setOpen] = useState(false);
+  const [size, setSize] = useState();
+  const handleOpen = (value) => {
+    setSize(value);
+    setOpen(true);
+  };
+  const handleClose = () => setOpen(false);
+
+  const handleUpdate = async (e, id) => {
+    e.preventDefault();
+    await axios
+      .put(`http://localhost:8000/posts/${id}`, {
+        editAuthor: author,
+        editTitle: title,
+        editDescription: description,
+      })
+      .then((response) => {
+        console.log(response.data);
+      });
+  };
 
   return (
     <div className="card-container">
@@ -36,74 +53,84 @@ const PostCard = ({ id, author, title, description, handleDelete }) => {
           delete | <RiDeleteBin2Line />
         </button>
         <div className="modal-container">
-        <ButtonToolbar>
-          <Button size="md" onClick={() => handleOpen("md")}>
-            update | <GrUpdate />
-          </Button>
-        </ButtonToolbar>
-        <Modal size={size} open={open} onClose={handleClose}>
-        <Modal.Header>
-          <Modal.Title>Edit the post</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-        <form>
-        <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">
-            Author
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            value={author}
-          />
-          <div id="emailHelp" className="form-text">
-            Author is required
-          </div>
+          <ButtonToolbar>
+            <Button size="md" onClick={() => handleOpen("md")}>
+              update | <GrUpdate />
+            </Button>
+          </ButtonToolbar>
+          <Modal size={size} open={open} onClose={handleClose}>
+            <Modal.Header>
+              <Modal.Title>Edit the post</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <form>
+                <div className="mb-3">
+                  <label htmlFor="exampleInputEmail1" className="form-label">
+                    Author
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    value={editAuthor}
+                    onChange={(e) => setEditAuthor(e.target.value)}
+                  />
+                  <div id="emailHelp" className="form-text">
+                    Author is required
+                  </div>
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="exampleInputEmail1" className="form-label">
+                    Title
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    value={editTitle}
+                    onChange={(e) => setEditTitle(e.target.value)}
+                  />
+                  <div id="emailHelp" className="form-text">
+                    Title is required
+                  </div>
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="exampleInputEmail1" className="form-label">
+                    Description
+                  </label>
+                  <textarea
+                    type="text"
+                    className="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    value={editDescription}
+                    onChange={(e) => setEditDescription(e.target.value)}
+                  />
+                  <div id="emailHelp" className="form-text">
+                    description is required
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  className="btn btn-outline-primary"
+                  onClick={() => handleUpdate(id)}
+                >
+                  Save Changes
+                </button>
+              </form>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button onClick={handleClose} appearance="primary">
+                Ok
+              </Button>
+              <Button onClick={handleClose} appearance="subtle">
+                Cancel
+              </Button>
+            </Modal.Footer>
+          </Modal>
         </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">
-            Title
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            value={title}
-          />
-          <div id="emailHelp" className="form-text">
-            Title is required
-          </div>
-        </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">
-            Description
-          </label>
-          <textarea
-            type="text"
-            className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            value={description}
-          />
-          <div id="emailHelp" className="form-text">
-            description is required
-          </div>
-        </div>
-      </form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={handleClose} appearance="primary">
-            Edit
-          </Button>
-          <Button onClick={handleClose} appearance="subtle">
-            Cancel
-          </Button>
-        </Modal.Footer>
-      </Modal>
-      </div>
       </div>
     </div>
   );
